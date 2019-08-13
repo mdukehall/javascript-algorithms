@@ -13,7 +13,10 @@ Fork the repository
 
 ## Usage
 Open a terminal
-```rhino example.js```
+
+Browse to your project folder
+
+Type: ```rhino example.js```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
