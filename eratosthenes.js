@@ -33,4 +33,3 @@ return result;
 }
 
 print(sieveOfEratosthenes(200));
-print(sieveOfEratosthenes)
