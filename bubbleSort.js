@@ -4,6 +4,7 @@ function bubbleSort(array) {
         Loop through the input array backwards (because with each pass you've pushed the highest value to the last remaining spot)
             Loop through the remaining array and compare the index to the next index to the right, if it is bigger, swap them.
         Return the array
+        This algorithm always runs in O(n^2) time.
     */
     for (var i = array.length; i>0; i--) {
         for (var j=0; j<i;j++) {
