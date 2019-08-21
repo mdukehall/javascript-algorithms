@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 function narcissistic(value) {
 /*
 A Narcissistic Number is a number which is the sum of its own digits, 

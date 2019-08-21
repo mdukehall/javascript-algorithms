@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */
  function nth(arr, pos) {
      /*
     Problem: Given an array/list [] of integers , Find the Nth smallest element in this array of integers

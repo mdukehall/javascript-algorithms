@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 function minSum (arr) {
  //var sorted = arr.sort((a,b) => a - b);
  arr.sort((a,b) => a-b);

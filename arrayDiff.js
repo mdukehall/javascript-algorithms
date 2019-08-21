@@ -6,10 +6,20 @@ array_diff([1,2],[1]) == [2]
 array_diff([1,2,2,2,3],[2]) == [1,3]
 */
 function array_diff(a, b) {
-    for (i = 0; i < a.length; i++) {
-        if (b.includes(a[i])) { a.splice(i,1);}
+    var result = [];
+    print('a: ' + a);
+    print('b: ' + b);
+    for (var i = 0; i < a.length ; i++) {
+        print('a[i]: ' + a[i] + ' is included in b: ' + b);
+        print('includes shows: ' + b.includes(a[i]));
+        if (b.includes(a[i]) == false) {
+            print('I am here');
+            result.push(a[i]);
+            print('result: ' + result);
         }
-    return a;
+    }
+    print('result: ' + result);
+    return result;
 }
 
 print(array_diff([1,2],[1]));
