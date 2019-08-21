@@ -10,5 +10,5 @@ function reverse2(str) {
     return str.split('').reduce((reversed, character) => character + reversed, '');
 }
 
-print(reverse1('killroywashere'));
-print(reverse2('killroywashere'));
+print(reverse1('summer time blues'));
+print(reverse2('will wash away'));
