@@ -1,4 +1,7 @@
 /*jshint esversion: 6 */
+/* Takes in a string of lowercase characters and returns a ratio of [lengths of errors]/[length of total]
+where errors = any letter greater than m */
+
 function printerError(s) {
     errors = [];
     result = '';
