@@ -31,3 +31,4 @@ print(reverseInt(900));
 print(reverseInt(-15));
 print(reverseInt(-90));
 //this algorithm fails for values 800, 900
+//submitted bug: https://github.com/mozilla/rhino/issues/594
