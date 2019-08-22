@@ -12,6 +12,8 @@ function printerError(s) {
 }
 
 function printerErrorsRegEx(s) {
+    //Rhino does not recognize input parameter as an array.
+    print(s);
     return s.match(/[^a-m]/g).length + "/" + s.length;
 }
 
