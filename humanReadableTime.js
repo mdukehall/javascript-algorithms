@@ -8,8 +8,11 @@ SS = seconds, padded to 2 digits, range: 00 - 59
 function timeConvert(num) {
     if (num <= 359999) {
         var hours = Math.floor(num / 3600);
+        if (hours < 10) hours = '0' + hours;
         var minutes = Math.floor(num % 3600 / 60);
+        if (minutes < 10) minutes = '0' + minutes;
         var seconds = Math.floor(num % 3600 % 60);
+        if (seconds < 10) seconds = '0' + seconds;
         return hours + ':' + minutes + ':' + seconds;
     }
     else return('error: max size exceeded');
