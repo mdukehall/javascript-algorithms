@@ -5,24 +5,34 @@ and determines if the order of the parentheses is valid.
 The function should return true if the string is valid, and false if it's invalid.
 */
 class Tree {
-    constructor(tree, depth) {
-        //this will be a 2-dim array where the index is treated as the depth
+    constructor() {
+        //this will be an array where the index is treated as the depth
         this._tree=[];
         this._depth=0;
       }
     
     getDepth() {
-          return 
-      }
+          return this._depth;
+    }
+    incDepth() {
+        this._depth++;
+    }
+    decDepth() {
+        this._depth--;
+    }
     
-      addLeft(str) {
+    addLeft(str) {
         //evaluate the level and add the left paren to the tree
-        this._tree[];
+        let d = this._tree.getDepth();
+        this._tree[d] += str;
+        this._tree.incDepth();
     }
 
     addRight(str) {
         //evaluate the level and add the right paren to the tree
-        this._tree.push(str);
+        let d = this._tree.getDepth();
+        this._tree[d] += str;
+        this._tree.decDepth();
     }
     
   }
