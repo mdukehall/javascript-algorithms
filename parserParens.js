@@ -10,14 +10,14 @@ class Tree {
         this._tree=[];
         this._depth=0;
       }
-    
     getDepth() {
-          return this._depth;
+        return this._depth;
     }
     incDepth() {
         this._depth++;
     }
     decDepth() {
+        if (this._depth < 0) {print('Error: Requested depth less than zero.');}
         this._depth--;
     }
     
@@ -38,31 +38,24 @@ class Tree {
   }
   
 const tree = new Tree();
-
-
-
 function validParentheses(parens){
     const par = parens.split('');
     par.forEach(element => {
-        if (element == '(') lparen(element);
-        if (element == ')') {
-            if (left.length == right.length) return false; // no parent lparen
-            rparen(element);
-        }
+        if (element == '(') tree.addLeft(element);
+        if (element == ')') tree.addRight(element);
     });
 
-    //Evaluate:
-    print('left:'+left+' right:'+right+' bal:'+bal);
+    //Print:
+    tree.forEach(node => {
+        console.log('Depth: ' + index + ' Value: ' + element);
+    });
 
-    if (bal != 0) return false;
-    if (lparen.length != rparen.length) return false;
-    return true;
   }
 
 //print(validParentheses('()')); //true
 //print(validParentheses(')(()))')); //false
 //print(validParentheses(')(')); //false
 //print(validParentheses('(')); //false
-print(validParentheses('())')); //false
-//print(validParentheses('(())((()())())')); //true
+//print(validParentheses('())')); //false
+validParentheses('(())((()())())'); //true
 //print(validParentheses('(())(((())())())(')); //false
