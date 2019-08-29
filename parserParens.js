@@ -7,32 +7,32 @@ The function should return true if the string is valid, and false if it's invali
 class Tree {
     constructor() {
         //this will be an array where the index is treated as the depth
-        this._tree=[];
-        this._depth=0;
+        this.tree=[];
+        this.depth=0;
       }
     getDepth() {
-        return this._depth;
+        return this.depth;
     }
     incDepth() {
-        this._depth++;
+        this.depth++;
     }
     decDepth() {
-        if (this._depth < 0) {print('Error: Requested depth less than zero.');}
-        this._depth--;
+        if (this.depth < 0) {console.log('Error: Requested depth less than zero.');}
+        this.depth--;
     }
     
     addLeft(str) {
         //evaluate the level and add the left paren to the tree
-        let d = this._tree.getDepth();
-        this._tree[d] += str;
-        this._tree.incDepth();
+        let d = this.depth;
+        this.tree[d] += str;
+        this.depth++;
     }
 
     addRight(str) {
         //evaluate the level and add the right paren to the tree
-        let d = this._tree.getDepth();
-        this._tree[d] += str;
-        this._tree.decDepth();
+        let d = this.depth;
+        this.tree[d] += str;
+        this.depth--;
     }
     
   }
@@ -46,16 +46,16 @@ function validParentheses(parens){
     });
 
     //Print:
-    tree.forEach(node => {
+    tree.tree.forEach(node => {
         console.log('Depth: ' + index + ' Value: ' + element);
     });
 
   }
 
+validParentheses('(())((()())())'); //true
 //print(validParentheses('()')); //true
 //print(validParentheses(')(()))')); //false
 //print(validParentheses(')(')); //false
 //print(validParentheses('(')); //false
 //print(validParentheses('())')); //false
-validParentheses('(())((()())())'); //true
 //print(validParentheses('(())(((())())())(')); //false
