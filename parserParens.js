@@ -52,6 +52,7 @@ function validParentheses(parens){
 
   }
 
+  //
 validParentheses('(())((()())())'); //true
 //print(validParentheses('()')); //true
 //print(validParentheses(')(()))')); //false
