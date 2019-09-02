@@ -46,9 +46,12 @@ function validParentheses(parens){
     });
 
     //Print:
-    tree.tree.forEach(node => {
-        console.log('Depth: ' + index + ' Value: ' + element);
-    });
+    arr = [];
+    arr = tree.tree;
+    console.log(arr);
+    // arr.forEach(node => {
+    //     console.log('Depth: ' + index + ' Value: ' + element);
+    // });
 
   }
 
