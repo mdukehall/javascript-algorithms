@@ -24,6 +24,7 @@ class Tree {
     addLeft(str) {
         //evaluate the level and add the left paren to the tree
         let d = this.depth;
+        console.log('str:' + str + ' depth:' + d);
         this.tree[d] += str;
         this.depth++;
     }
@@ -31,6 +32,7 @@ class Tree {
     addRight(str) {
         //evaluate the level and add the right paren to the tree
         let d = this.depth;
+        console.log('str:' + str + ' depth:' + d);
         this.tree[d] += str;
         this.depth--;
     }
@@ -45,7 +47,7 @@ function validParentheses(parens){
         if (element == ')') tree.addRight(element);
     });
 
-    //Print:
+    //Print
     arr = [];
     arr = tree.tree;
     console.log(arr);
