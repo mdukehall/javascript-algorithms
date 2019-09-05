@@ -47,7 +47,7 @@ function validParentheses(parens){
         if (element == ')') tree.addRight(element);
     });
 
-    //Print
+    //Print stuff
     arr = [];
     arr = tree.tree;
     console.log(arr);
