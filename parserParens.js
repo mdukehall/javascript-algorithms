@@ -10,19 +10,23 @@ class Tree {
         this.tree = [];
         this.depth = 0;
         this.errors = [];
+        
       }
-    getDepth() {
+
+    get getDepth() {
         return this.depth;
     }
+
     incDepth() {
         this.depth++;
     }
+
     decDepth() {
         if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
         this.depth--;
     }
-    
-    addLeft(str) {
+
+      addLeft(str) {
         //evaluate the level and add the left paren to the tree
         let d = this.depth;
         console.log('str:' + str + ' depth:' + d);
@@ -39,18 +43,33 @@ class Tree {
         if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
     }
     
+    fillTree(str) {
+        const par = str.split('');
+        par.forEach(element => {
+            if (element == '(') this.tree.addLeft(element);
+            if (element == ')') this.tree.addRight(element);
+        });
+    }
+    
+    
+    
     validateTree() {
         //function runs validation rules against tree.
+        this.tree.forEach(element => {
+            console.log(element);
+
+        });
     }
   }
   
-const tree = new Tree();
+const mytree = new Tree();
+mytree.fillTree('(())((()())())');
+console.log(mytree.tree);
+tree.validateTree();
+
+
 function validParentheses(parens){
-    const par = parens.split('');
-    par.forEach(element => {
-        if (element == '(') tree.addLeft(element);
-        if (element == ')') tree.addRight(element);
-    });
+    
 
     //Print 
     arr = [];
@@ -63,7 +82,7 @@ function validParentheses(parens){
   }
 
   //
-validParentheses('(())((()())())'); //true
+//validParentheses('(())((()())())'); //true
 //print(validParentheses('()')); //true
 //print(validParentheses(')(()))')); //false
 //print(validParentheses(')(')); //false
