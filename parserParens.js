@@ -7,8 +7,9 @@ The function should return true if the string is valid, and false if it's invali
 class Tree {
     constructor() {
         //this will be an array where the index is treated as the depth
-        this.tree=[];
-        this.depth=0;
+        this.tree = [];
+        this.depth = 0;
+        this.errors = [];
       }
     getDepth() {
         return this.depth;
@@ -17,7 +18,7 @@ class Tree {
         this.depth++;
     }
     decDepth() {
-        if (this.depth < 0) {console.log('Error: Requested depth less than zero.');}
+        if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
         this.depth--;
     }
     
@@ -32,11 +33,15 @@ class Tree {
     addRight(str) {
         //evaluate the level and add the right paren to the tree
         let d = this.depth;
+        this.depth--;
         console.log('str:' + str + ' depth:' + d);
         this.tree[d] += str;
-        this.depth--;
+        if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
     }
     
+    validateTree() {
+        //function runs validation rules against tree.
+    }
   }
   
 const tree = new Tree();
