@@ -26,7 +26,7 @@ class Tree {
         this.depth--;
     }
 
-      addLeft(str) {
+    addLeft(str) {
         //evaluate the level and add the left paren to the tree
         let d = this.depth;
         console.log('str:' + str + ' depth:' + d);
@@ -42,12 +42,12 @@ class Tree {
         this.tree[d] += str;
         if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
     }
-    
+
     fillTree(str) {
         const par = str.split('');
         par.forEach(element => {
-            if (element == '(') this.tree.addLeft(element);
-            if (element == ')') this.tree.addRight(element);
+            if (element == '(') this.addLeft(element);
+            if (element == ')') this.addRight(element);
         });
     }
     
@@ -65,7 +65,7 @@ class Tree {
 const mytree = new Tree();
 mytree.fillTree('(())((()())())');
 console.log(mytree.tree);
-tree.validateTree();
+mytree.validateTree();
 
 
 function validParentheses(parens){
