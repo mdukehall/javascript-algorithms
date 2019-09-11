@@ -29,8 +29,8 @@ class Tree {
     addLeft(str) {
         //evaluate the level and add the left paren to the tree
         let d = this.depth;
-        console.log('str:' + str + ' depth:' + d);
-        this.tree[d] += str;
+        //console.log('str:' + str + ' depth:' + d);
+        this.tree[d] = this.tree[d] + str;
         this.depth++;
     }
 
@@ -38,8 +38,8 @@ class Tree {
         //evaluate the level and add the right paren to the tree
         let d = this.depth;
         this.depth--;
-        console.log('str:' + str + ' depth:' + d);
-        this.tree[d] += str;
+        //console.log('str:' + str + ' depth:' + d);
+        this.tree[d] = this.tree[d] + str;
         if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
     }
 
@@ -56,7 +56,7 @@ class Tree {
     validateTree() {
         //function runs validation rules against tree.
         this.tree.forEach(element => {
-            console.log(element);
+            //Check if this element has an even number of parens
 
         });
     }
@@ -64,7 +64,7 @@ class Tree {
   
 const mytree = new Tree();
 mytree.fillTree('(())((()())())');
-console.log(mytree.tree);
+console.log(mytree);
 mytree.validateTree();
 
 
