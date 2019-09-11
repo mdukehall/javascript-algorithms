@@ -30,7 +30,8 @@ class Tree {
         //evaluate the level and add the left paren to the tree
         let d = this.depth;
         //console.log('str:' + str + ' depth:' + d);
-        this.tree[d] = this.tree[d] + str;
+        if (!this.tree[d]) { this.tree[d] = ""; }
+        this.tree[d] += str;
         this.depth++;
     }
 
@@ -39,7 +40,8 @@ class Tree {
         let d = this.depth;
         this.depth--;
         //console.log('str:' + str + ' depth:' + d);
-        this.tree[d] = this.tree[d] + str;
+        if (!this.tree[d]) { this.tree[d] = ""; }
+        this.tree[d] += str;
         if (this.depth < 0) {this.errors.push('A negative depth value is not possible.');}
     }
 
