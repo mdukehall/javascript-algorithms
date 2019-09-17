@@ -60,8 +60,9 @@ class Tree {
         //function runs validation rules against tree.
         this.tree.forEach(function(element, index) {
             //Check if this element has an even number of parens
-            if (element.length%2 !== 0) {this.errors.push("Error: Odd number of parenthesis at depth: " + index);}
+            if (element.length%2 !== 0) {this.errors.push("Error: Odd number of parenthesis at depth");}
             //not working.
+
         });
     }
   }
