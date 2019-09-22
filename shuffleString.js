@@ -22,3 +22,5 @@ function shuffle(s) {
 }
 
 console.log(shuffle('ABCAA'));
+console.log(shuffle('JERNDHES'));
+console.log(shuffle('ABCNCUEMSZAAA'));
