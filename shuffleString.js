@@ -7,14 +7,14 @@ EDGE CASE: If it is not possible, return null
 
 function shuffle(s) {
     let answer = "";
-    let leftovers = [];
+    let leftovers = "";
     //Sort the string
     let sorted = s.toUpperCase().split('').sort();
     console.log(sorted);
     //Loop through string and build a new string 
     sorted.forEach(function(element, i) {
-        
-        //sum += parseInt(element)*seq[i%6];
+        if (answer[answer.length-1] === element) {leftovers+=element;}
+        else {answer+=element;}
       });
     console.log("answer: "+answer+" leftovers: "+leftovers);
 
