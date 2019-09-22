@@ -20,7 +20,7 @@ function shuffle(s) {
     leftovers = leftovers.toUpperCase().split('');
     leftovers.forEach(function(element, i) {
         console.log("answer[i]: " + answer[i] + " answer[i+1] " + answer[i+1] + " element: " + element);
-        if ((answer[i] !== element) && (answer[i+1] !== element)) {
+        if ((answer[i] !== element) || (answer[i+1] !== element)) {
             answer = answer.slice(0,i) + element + answer.slice(i,answer.length);}
         //else {answer+=element;}
       });
